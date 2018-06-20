@@ -1,0 +1,54 @@
+.header-first {
+  background: $primary-dark;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 13px 0;
+  color: white;
+  @include breakpoint(small down) {
+    font-size: 13px;
+  }
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    @include breakpoint(small down) {
+      justify-content: flex-start;
+    }
+  }
+  #block-headertopright {
+    .field-item {
+      @include breakpoint(small down) {
+        display: flex;
+        flex-direction: column;
+      }
+      span {
+        font-weight: bold;
+      }
+      svg {
+        font-size: 19px;
+        margin: 0 8px;
+        color: $primary-light;
+        @include breakpoint(small down) {
+          font-size: 15px;
+          display: none;
+        }
+      }
+      a {
+        font-weight: bold;
+
+        &:hover {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: $accent-dark;
+    }
+  }
+}
+

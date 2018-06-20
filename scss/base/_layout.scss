@@ -1,0 +1,25 @@
+.container {
+   //background: papayawhip;
+   @include breakpoint(small up) {
+     max-width: 300px;
+     margin: 0 auto;
+   }
+   @include breakpoint(small down) {
+     padding: 0 !important;
+   }
+   @include breakpoint(medium up) {
+     max-width: 630px;
+     margin: 0 auto;
+   }
+   @include breakpoint(large up) {
+     max-width: 835px;
+     margin: 0 auto;
+   }
+   @include breakpoint(xlarge up) {
+     max-width: $global-width;
+     margin: 0 auto;
+   }
+   @include breakpoint(xlarge down) {
+     padding: 0 20px;
+   }
+ }

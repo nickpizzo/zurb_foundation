@@ -1,0 +1,51 @@
+.header-second {
+  border-bottom: 5px solid $primary-light;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #main-logo {
+      max-width: 100px;
+      margin: 1.5em 0;
+      @include breakpoint(small down) {
+        max-width: 210px;
+      }
+    }
+    #block-sandstheme-main-menu {
+      @include breakpoint(medium down) {
+        display: none;
+      }
+      .menu {
+        li {
+          &:last-child {
+            a {
+              padding-right: 0;
+              margin-right: 0;
+            }
+          }
+          a {
+            @extend .hvr-underline-from-center;
+            margin: 12px 16px 4px 16px;
+            padding: 0 0 8px 0 !important;
+            &:hover {
+              color: $primary-dark;
+            }
+            &:before {
+              height: 2px;
+              background: $primary-light;
+            }
+          }
+        }
+      }
+    }
+    .menu-icon {
+      margin: 19px;
+      &:after {
+        width: 130%;
+        height: 3px;
+        background: $primary-light;
+        box-shadow: 0 7px 0 $primary-light, 0 14px 0 $primary-light;
+      }
+    }
+  }
+}

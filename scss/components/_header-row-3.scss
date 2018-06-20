@@ -1,0 +1,81 @@
+//Accordion mobile choose vehicle
+header {
+  .accordion-menu {
+    .is-accordion-submenu-parent {
+      width: auto;
+      .is-accordion-submenu {
+        margin: 0 20px 0 15px;
+      }
+    }
+    background: $primary-light;
+    color: #fff;
+    border-bottom: 2px solid #000;
+    display: none;
+    padding-top: 5px;
+    @include breakpoint(medium down) {
+      display: flex;
+    }
+    .choose-vehicle-trigger {
+      color: #fff;
+      h5 {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+      &:after {
+        border-color: $accent-dark transparent transparent !important;
+      }
+    }
+    #block-facetapi-xwrpannvxdtrrdtlytadz1ghmwpdmcj0,
+    #block-fitment-base-fitment-base {
+      h2 {
+        display: none;
+      }
+      .messages {
+        display: none;
+      }
+      form {
+        .form-item {
+          margin-top: 0;
+        }
+        .item-list {
+          ul {
+            list-style-image: none;
+            list-style-type: none;
+            li {
+              display: flex;
+              align-items: center;
+              list-style-image: none;
+              list-style-type: none;
+              width: auto;
+              margin: 0 1.5em 0.25em 1.5em;
+              a {
+                order: 2;
+                @extend .black-flat-button2;
+                padding: 10px 14px;
+                text-align: center;
+                width: 100%;
+                margin-bottom: .7em;
+
+              }
+            }
+            li.first {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+        input[type="submit"] {
+          @extend .transparent-button;
+          color: #fff;
+        }
+        label {
+          display: none;
+        }
+        select {
+          margin-bottom: .2em;
+          background-image: none;
+        }
+      }
+    }
+  }
+}

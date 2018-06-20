@@ -1,0 +1,27 @@
+body.page-node-47 {
+  .content {
+    .field-item {
+      background-color: $bg-light;
+      border-radius: 2px;
+      padding: 1.2em 0 2em 0;
+      margin-bottom: 1em;
+      @include breakpoint(large down) {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+      }
+      p {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 15px;
+      }
+      ul {
+        padding-left: 3em;
+        li {
+          max-width: 800px;
+          margin: 0 auto;
+
+        }
+      }
+    }
+  }
+}

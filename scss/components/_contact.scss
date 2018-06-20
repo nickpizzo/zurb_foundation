@@ -1,0 +1,17 @@
+.section-contact,
+.path-webform {
+  #frontbanner-questions {
+    display: none;
+  }
+  #block-sandstheme-page-title {
+    display: none;
+  }
+  #block-contactinfo {
+    margin-bottom: 1em;
+    .field-item {
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

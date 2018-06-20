@@ -1,0 +1,41 @@
+footer {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-top: 1px solid $accent-light;
+  .row {
+    @include breakpoint(medium down) {
+      flex-direction: column;
+    }
+    #footer-first {
+      .menu {
+        @include breakpoint(medium down) {
+          flex-direction: column;
+        }
+        li {
+          a {
+            padding: 12px 32px 12px 0;
+            color: #000;
+            &:hover {
+              color: $primary-light;
+            }
+          }
+        }
+      }
+    }
+    #footer-second {
+      font-size: 12px;
+      .row {
+        @include breakpoint(medium down) {
+          flex-direction: column;
+          padding-top: 10px;
+          div {
+            text-align: center;
+          }
+          p {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+
+$primary-light: #44C2EB;
+$primary-dark: #363D43;
+$bg-light: #F4F4F5;
+
+$accent-light: #BAB9B9;
+$accent-dark: #570103;
+$header-accent: #214208;
+$accent-font: 'Oswald', sans-serif;
+
+//Header fixes
+.off-canvas-content {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//link transition
+.off-canvas-wrapper {
+  a {
+    transition: .3s;
+  }
+}
+
+//Main content fixes
+#main {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.7em;
+}
+
+//Page titles
+#title-wrap {
+  background: url(../images/title-bg.jpg) no-repeat center center;
+  background-size: cover;
+  h1 {
+    text-transform: uppercase;
+    font-family: $accent-font;
+    padding: 1em 0;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+//Tabs fixes
+#block-sandstheme-local-tasks {
+  .button-group {
+    border-bottom: 1px solid #767676 !important;
+    @include breakpoint(small down) {
+      display: flex;
+      flex-direction: column;
+      border-bottom: none;
+    }
+    a {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+//Messages {
+.callout {
+  margin-top: 16px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+//button fixes
+.success.button {
+  color: #fff !important;
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+//add to any button
+ul.inline {
+  margin-left: 0;
+  li.addtoany {
+    padding: 0;
+    .addtoany_share_save {
+      padding: 0;
+      margin-top: 8px !important;
+    }
+  }
+}
+
+//Horizontal tabs fixes
+@include breakpoint(medium down) {
+  ul.tabs {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    li {
+      display: flex;
+      margin-bottom: 2px;
+      a {
+        width: 100%;
+        border: 1px solid lightgrey;
+      }
+    }
+  }
+}
+
+//form field width fixes
+#main {
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], .form-textarea {
+    max-width: 485px !important;
+  }
+  .form-textarea-wrapper {
+    max-width: 600px;
+  }
+  select {
+    max-width: 270px !important;
+  }
+}
+
+//remove default margin and padding on views:fieldsets
+.content {
+  .fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}
+
+//custom pagination
+.item-list {
+  .pager {
+    padding: 0;
+    text-align: right;
+    float: right;
+    margin-top: 20px;
+    .pager-current {
+      background: $primary-light;
+      border: 1px solid $primary-light;
+      color: #fff;
+      padding: 2px 12px;
+      float: left;
+    }
+    li {
+      margin: 0 5px 0 0;
+      padding: 0;
+      float: left;
+      border: none;
+      background-image: none;
+      display: inline;
+      list-style-type: none;
+      a {
+        color: #333;
+        padding: 2px 12px;
+        float: left;
+        border: 1px solid #ddd;
+        &:hover {
+          background: $primary-light;
+          border: 1px solid $primary-light;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+//messages
+.region-highlighted.callout {
+  padding: 0;
+  margin: 0;
+  .callout {
+    margin-bottom: 0;
+  }
+}
+

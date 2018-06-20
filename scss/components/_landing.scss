@@ -1,0 +1,101 @@
+.path-frontpage {
+  #main {
+    margin: auto;
+    padding: 0;
+    section {
+      display: none;
+    }
+  }
+  #title-wrap {
+    display: none;
+  }
+  #frontbanner-wrap {
+    background: url(../images/banner-bg-min.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 3em 0;
+    @include breakpoint(small down) {
+      padding: 1em 0;
+    }
+    .container {
+      background-color: rgba(68,194,235,0.60);
+      padding:1.8em 2em 2.5em 2em;
+      .field-item {
+        @include breakpoint(small down) {
+          padding: 1em;
+        }
+        h1 {
+          text-transform: uppercase;
+          color: #fff;
+          font-family: $accent-font;
+        }
+        h5 {
+          color: #e8e8e8;
+          line-height: 1.2;
+          margin-bottom: 1.8em;
+          @include breakpoint(small down) {
+            margin-bottom: 1em;
+          }
+        }
+        .frontbanner-buttons {
+          @include breakpoint(small down) {
+            display: flex;
+            flex-direction: column;
+          }
+          a {
+            &:nth-child(1) {
+              color: $primary-dark;
+              padding: 10px 20px;
+              margin-right: 8px;
+              border: 2px solid #fff;
+              background: #fff;
+              border-radius: 5px;
+              &:hover {
+                color: $primary-light;
+              }
+              @include breakpoint(small down) {
+                margin-bottom: 5px;
+                margin-right: 0;
+              }
+            }
+            &:nth-child(2) {
+              color: #fff;
+              padding: 10px 20px;
+              border: 2px solid #fff;
+              border-radius: 5px;
+              &:hover {
+                background: #fff;
+                color: $primary-light;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #frontbanner-steps {
+    margin: 2em 0;
+    h1 {
+      font-family: $accent-font;
+      margin-left: 13px;
+      text-transform: uppercase;
+    }
+    .steps-item {
+      img {
+        max-width:80%;
+      }
+      h4 {
+        font-family: $accent-font;
+        line-height: 1;
+        margin-top: 10px;
+        color: $primary-dark;
+        @include breakpoint(small down) {
+          font-size: 22px;
+        }
+      }
+      p {
+        line-height: 1.2;
+      }
+    }
+  }
+
+}

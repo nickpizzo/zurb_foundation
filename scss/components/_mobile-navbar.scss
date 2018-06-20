@@ -1,0 +1,8 @@
+.header-second {
+  .menu-icon {
+    display: none;
+    @include breakpoint(medium down) {
+      display: block;
+    }
+  }
+}

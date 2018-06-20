@@ -1,0 +1,17 @@
+.path-user {
+  #block-sandstheme-page-title {
+    display: none;
+  }
+  #frontbanner-questions {
+    display: none;
+  }
+  .user-login-form,
+  .user-pass {
+    .form-item {
+      margin-bottom: 1em;
+      input {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

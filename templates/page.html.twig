@@ -1,0 +1,198 @@
+<div class="off-canvas-wrapper">
+    <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
+        <aside id="left-off-canvas-menu" class="off-canvas left-off-canvas-menu position-left" role="complementary" data-off-canvas>
+            <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ page.left_off_canvas }}
+        </aside>
+
+        <aside id="right-off-canvas-menu" class="off-canvas right-off-canvas-menu position-right" role="complementary" data-off-canvas>
+            <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ page.navigation }}
+        </aside>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+            {% if page.meta_header %}
+                {% if meta_header_grid %}
+                    <div class="row">
+                    <div class="large-12 columns">
+                {% endif %}
+                {{ page.meta_header }}
+                {% if meta_header_grid %}
+                    </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            <header role="banner" aria-label="{{ 'Site header'|t }}">
+                <div class="header-first">
+                    <div class="container">
+                        {{ page.header_top_right }}
+                    </div>
+                </div>
+                <div class="header-second">
+                    <div class="container">
+                        <a href="{{ path('<front>') }}">
+                            <img id="main-logo" class="img-responsive" src="/themes/zurb_foundation/logo.png" />
+                        </a>
+                        {{ page.navigation }}
+                        <button class="menu-icon" type="button" data-toggle="right-off-canvas-menu"></button>
+                    </div>
+
+                </div>
+            </header>
+
+            {#Frontpage sections#}
+            {% if is_front %}
+                <div id="frontbanner-wrap">
+                    <div class="container">
+                        {{ page.front_banner }}
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+            <div class="row">
+                {% if show_account_info %}
+                    <div class="{{ site_slogan ? 'large-6' : 'large-4 columns large-offset-8' }} columns hide-for-small">
+                        <p>
+                            {% if logged_in %}
+                                <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
+                                <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
+                            {% else %}
+                                <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+                                <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endif %}
+                {% if site_slogan %}
+                    <div class="large-6 columns hide-for-small">
+                        {{ site_slogan }}
+                    </div>
+                {% endif %}
+                {% if show_account_info %}
+                    <div class="show-for-small">
+                        <div class="six mobile-two columns">
+                            <p>
+                                <a href="{{ path('user.login') }}" class="radius button">{{ 'Login'|t }}</a>
+                            </p>
+                        </div>
+                        <div class="six mobile-two columns">
+                            <p>
+                                <a href="{{ path('user.register') }}" class="radius success button">{{ 'Sign Up'|t }}</a>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div id="title-wrap">
+                <div class="container">
+                    {% if node.title.value %}
+                        <h1>{{ node.title.value }}</h1>
+                    {% elseif page['#title'] %}
+                        <h1>{{ page['#title'] }}</h1>
+                    {% endif %}
+                </div>
+
+            </div>
+
+
+            {% if messages and not zurb_foundation_messages_modal %}
+                <div class="l-messages row">
+                    <div class="large-12 columns">
+                        <div class="container">
+                            {{ messages }}
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if page.help %}
+                <div class="l-help row">
+                    <div class="large-12 columns">
+                        {{ page.help }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="row">
+                <main id="main" class="container" role="main">
+                    {% if page.highlighted %}
+                        {% spaceless %}
+                            {{ page.highlighted }}
+                        {% endspaceless %}
+                    {% endif %}
+                    <a id="main-content"></a>
+                    {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+                    <section>
+                        {{ page.content }}
+                    </section>
+                </main>
+                {% if page.sidebar_first %}
+                    <div id="sidebar-first" class="{{ sidebar_first_grid }} columns sidebar ">
+                        {{ page.sidebar_first }}
+                    </div>
+                {% endif %}
+                {% if page.sidebar_second %}
+                    <div id="sidebar-second" class="{{ sidebar_sec_grid }} columns sidebar">
+                        {{ page.sidebar_second }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {#Frontpage sections continued#}
+
+            {% if is_front %}
+                <div id="frontbanner-steps">
+                    <div class="container">
+                        {{ page.front_steps }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div id="frontbanner-questions">
+                <div class="container">
+                    {{ page.front_questions }}
+                </div>
+
+            </div>
+
+            {% if page.footer_first or page.footer_middle or page.footer_last %}
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            {% if page.footer_first %}
+                                <div id="footer-first" class="large-12 columns">
+                                    {{ page.footer_first }}
+                                </div>
+                            {% endif %}
+                            <div id="footer-second" class="large-12 columns">
+                                <div class="bottom-bar panel">
+                                    <div class="row align-justify">
+                                        <div class="large-6 medium-12 columns">
+                                            &copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}
+                                        </div>
+                                        <p class="large-6 medium-12 columns text-right">
+                                            Site designed by
+                                            <a href="http://completewebsol.com/" target="_blank">Complete Web Solutions</a>
+
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
